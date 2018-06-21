@@ -5,7 +5,7 @@
         <id column="id" jdbcType="BIGINT" property="id" />
     </resultMap>
     <sql id="news_condition">
-        <if test="showIndex!='' and showIndex!=null">
+        <if test="showIndex!=null">
             and a.show_index = #{showIndex}
         </if>
         <if test="title!='' and title!=null">

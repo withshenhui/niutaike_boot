@@ -6,5 +6,5 @@ class NewsQuery : PageQuery() {
 
     var title:String? = null
 
-    var showIndex:Boolean = true
+    var showIndex:Boolean? = null
 }

@@ -30,7 +30,6 @@ class NewsController {
         if(news.logo!!.startsWith("http"))
             news.logo=news.logo!!.substring(news.logo!!.lastIndexOf("/")+1,news.logo!!.length)
         news.gmtCreate=Date()
-        news.showIndex=true
         return if(result.hasErrors())
             throw BizException("提交信息有误")
         else
@@ -55,11 +54,14 @@ class NewsController {
     @ApiOperation("新闻列表")
     @ApiImplicitParams(
         ApiImplicitParam(name = "title", value = "标题", dataType = "String", required = false, paramType = "query" ),
+        ApiImplicitParam(name = "showIndex", value = "首页显示", dataType = "Boolean", required = false, paramType = "query" ),
         ApiImplicitParam(name = "page", value = "页码", dataType = "Long", required = false, paramType = "query" ),
         ApiImplicitParam(name = "limit", value = "每页条数", dataType = "Long", required = false, paramType = "query" )
     )
     @GetMapping("/list")
-    fun findPage(@ApiIgnore newsQuery: NewsQuery):PageResult = newsService.findPage(newsQuery)
+    fun findPage(@ApiIgnore newsQuery: NewsQuery):PageResult {
+        return newsService.findPage(newsQuery)
+    }
 
     @ApiOperation("新闻详情")
     @ApiImplicitParam(name = "id", value = "新闻id", required = true, dataType = "Long", paramType = "path")
