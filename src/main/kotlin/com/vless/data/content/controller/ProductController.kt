@@ -4,10 +4,14 @@ import com.vless.data.common.BizException
 import com.vless.data.content.model.News
 import com.vless.data.content.model.Product
 import com.vless.data.content.query.NewsQuery
+import com.vless.data.content.query.ProductIndexQuery
 import com.vless.data.content.query.ProductQuery
 import com.vless.data.content.result.PageResult
+import com.vless.data.content.result.ProductIndexResult
+import com.vless.data.content.result.ProductResult
 import com.vless.data.content.service.NewsServiceAware
 import com.vless.data.content.service.ProductServiceAware
+import com.vless.data.content.service.ProductTypeServiceAware
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiImplicitParam
 import io.swagger.annotations.ApiImplicitParams
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.*
 import springfox.documentation.annotations.ApiIgnore
 import java.util.*
 import javax.validation.Valid
+import kotlin.collections.ArrayList
 
 @RestController
 @RequestMapping("/api/product")
@@ -26,6 +31,9 @@ class ProductController {
 
     @Autowired
     lateinit var productService: ProductServiceAware
+
+    @Autowired
+    lateinit var productTypeService: ProductTypeServiceAware
 
     @ApiIgnore
     @PostMapping("/save")
@@ -57,11 +65,41 @@ class ProductController {
     @ApiOperation("产品列表")
     @ApiImplicitParams(
             ApiImplicitParam(name = "title", value = "标题", dataType = "String", required = false, paramType = "query" ),
+            ApiImplicitParam(name = "productTypeParentId", value = "一级产品分类id", dataType = "Long", required = false, paramType = "query" ),
             ApiImplicitParam(name = "page", value = "页码", dataType = "Long", required = false, paramType = "query" ),
             ApiImplicitParam(name = "limit", value = "每页条数", dataType = "Long", required = false, paramType = "query" )
     )
     @GetMapping("/list")
     fun findPage(@ApiIgnore productQuery: ProductQuery):PageResult = productService.findPage(productQuery)
+
+    @ApiOperation("分类产品列表")
+    @ApiImplicitParams(
+            ApiImplicitParam(name = "title", value = "标题", dataType = "String", required = false, paramType = "query" ),
+            ApiImplicitParam(name = "productTypeParentId", value = "一级产品分类id", dataType = "Long", required = false, paramType = "query" )
+    )
+    @GetMapping("/result")
+    fun findByType(@ApiIgnore productQuery: ProductIndexQuery):ProductIndexResult{
+        var result=ProductIndexResult()
+        result.productTypeParentId=productQuery.productTypeId
+        var list:MutableList<ProductIndexResult.ProductNextCat> = ArrayList()
+        val list1=productTypeService.findByParent(productQuery.productTypeId)
+        for(pt in list1){
+            var cat=ProductIndexResult.ProductNextCat()
+            cat.productTypeId=pt.id
+            cat.productTypeName=pt.label
+            productQuery.productTypeId=pt.id
+            val list2=productService.findList(productQuery)
+            var listPR:MutableList<ProductResult> = ArrayList()
+            for(pt2 in list2){
+                listPR.add(pt2)
+            }
+            cat.list=listPR
+            list.add(cat)
+        }
+        result.list=list
+        return result
+    }
+
 
     @ApiOperation("产品详情")
     @ApiImplicitParam(name = "id", value = "产品id", required = true, dataType = "Long", paramType = "path")

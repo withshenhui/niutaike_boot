@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vless.data.content.mapper.ProductTypeMapper">
+    <resultMap id="BaseResultMap" type="com.vless.data.content.model.ProductType">
+        <id column="id" jdbcType="BIGINT" property="id" />
+    </resultMap>
+    <sql id="p_condition">
+        <if test="parent!=null">
+            and a.parent = #{parent}
+        </if>
+        <if test="label!='' and label!=null">
+            and a.label like concat('%',#{label},'%')
+        </if>
+    </sql>
+
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="com.vless.data.content.query.ProductTypeQuery">
+        select a.*
+        from product_type a
+        where 1=1
+        <include refid="p_condition"/>
+        order by a.id desc
+
+    </select>
+
+    <select id="selectCount" resultType="Integer" parameterType="com.vless.data.content.query.ProductTypeQuery">
+        select count(1)  from product_type a
+        where 1=1
+        <include refid="p_condition"/>
+    </select>
+
+</mapper>

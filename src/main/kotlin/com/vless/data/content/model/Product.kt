@@ -29,4 +29,18 @@ class Product : BaseEntity() {
     @NotNull
     var showIndex:Boolean = true
 
+    @Column(name="seo_title")
+    var seoTitle:String? = null
+
+    @Column(name="seo_description")
+    var seoDescription:String? = null
+
+    @Column(name="seo_keyword")
+    var seoKeyword:String? = null
+
+    @Column(name="product_type_id")
+    @NotNull
+    var productTypeId:Long = 0
+
+
 }

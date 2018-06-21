@@ -6,5 +6,10 @@ class ProductQuery : PageQuery() {
 
     var title:String? = null
 
-    var showIndex:Boolean = true
+    var showIndex:Boolean? = null
+
+    var productTypeParentId:Long? = null
+
+    var productTypeId:Long? = null
+
 }

@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.vless.data.content.mapper.ProductMapper">
-    <resultMap id="BaseResultMap" type="com.vless.data.content.model.Product">
+    <resultMap id="BaseResultMap" type="com.vless.data.content.result.ProductResult">
         <id column="id" jdbcType="BIGINT" property="id" />
     </resultMap>
     <sql id="p_condition">
         <if test="showIndex!='' and showIndex!=null">
             and a.show_index = #{showIndex}
         </if>
+        <if test="productTypeParentId!=null">
+            and p2.id = #{productTypeParentId}
+        </if>
+
+        <if test="title!='' and title!=null">
+            and a.title like concat('%',#{title},'%')
+        </if>
+    </sql>
+
+    <sql id="list_condition">
+        <if test="productTypeId!=null">
+            and a.product_type_id = #{productTypeId}
+        </if>
+
         <if test="title!='' and title!=null">
             and a.title like concat('%',#{title},'%')
         </if>
     </sql>
 
     <select id="selectAll" resultMap="BaseResultMap" parameterType="com.vless.data.content.query.ProductQuery">
-        select a.*
-        from ntk_product a
+        select a.*,p1.label productTypeName,p2.label productTypeParentName,p2.id productTypeParentId
+        from ntk_product a INNER JOIN product_type p1 ON p1.id=a.product_type_id
+        INNER JOIN product_type p2 on p2.id=p1.parent
         where 1=1
         <include refid="p_condition"/>
         order by a.gmt_create desc
 
     </select>
 
+    <select id="selectList" resultMap="BaseResultMap" parameterType="com.vless.data.content.query.ProductIndexQuery">
+        select a.*
+        from ntk_product a
+        where 1=1
+        <include refid="list_condition"/>
+        order by a.gmt_create desc
+
+    </select>
+
     <select id="selectCount" resultType="Integer" parameterType="com.vless.data.content.query.ProductQuery">
-        select count(1)  from ntk_product a
+        select count(1)
+        from ntk_product a INNER JOIN product_type p1 ON p1.id=a.product_type_id
+        INNER JOIN product_type p2 on p2.id=p1.parent
         where 1=1
         <include refid="p_condition"/>
     </select>

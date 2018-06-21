@@ -8,14 +8,13 @@ import javax.persistence.TemporalType
 
 open class BaseResult {
 
+
+    var id:Long = 0
+
     @Column(name = "gmt_create")
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     //@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     var gmtCreate: Date = Date()
 
-    @Column(name = "gmt_modified")
-    @Temporal(TemporalType.TIMESTAMP)
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-    var gmtModified: Date? = null
 }
