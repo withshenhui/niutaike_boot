@@ -16,10 +16,14 @@ class SwaggerConfig {
     @Bean
     fun controllerApi(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
+                .groupName("NewTech Admin API")
                 .apiInfo(ApiInfoBuilder()
                         .title("标题：NewTech API DOC")
                         .description("描述：NewTech API DOC")
                         .contact("Peter SHEN")
+                        .license("MIT")
+                        .licenseUrl("https://mit-license.org")
+                        .termsOfServiceUrl("http://www.newtecharmor.com")
                         .version("V1.0")
                         .build())
                 .select()
