@@ -75,10 +75,12 @@ class ProductController {
     @ApiOperation("分类产品列表")
     @ApiImplicitParams(
             ApiImplicitParam(name = "title", value = "标题", dataType = "String", required = false, paramType = "query" ),
-            ApiImplicitParam(name = "productTypeParentId", value = "一级产品分类id", dataType = "Long", required = false, paramType = "query" )
+            ApiImplicitParam(name = "productTypeId", value = "一级产品分类id", dataType = "Long", required = true, paramType = "query" )
     )
     @GetMapping("/result")
     fun findByType(@ApiIgnore productQuery: ProductIndexQuery):ProductIndexResult{
+        if(productQuery.productTypeId<=0)
+            throw BizException("productTypeParentId不能<=0")
         var result=ProductIndexResult()
         result.productTypeParentId=productQuery.productTypeId
         var list:MutableList<ProductIndexResult.ProductNextCat> = ArrayList()
