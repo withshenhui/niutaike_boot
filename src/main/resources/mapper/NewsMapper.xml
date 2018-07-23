@@ -11,6 +11,9 @@
         <if test="title!='' and title!=null">
             and a.title like concat('%',#{title},'%')
         </if>
+        <if test="type!='' and type!=null">
+            and a.type = #{type}
+        </if>
     </sql>
 
     <select id="selectAll" resultMap="BaseResultMap" parameterType="com.vless.data.content.query.NewsQuery">

@@ -34,4 +34,8 @@ class NewsService : NewsServiceAware {
     override fun findById(id: Long): News = newsRepository.findById(id).get()
 
 
+    override fun selectNext(id: Long): News? = newsMapper.selectNext(id)
+
+    override fun selectPrev(id: Long): News? = newsMapper.selectPrev(id)
+
 }

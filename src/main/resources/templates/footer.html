@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body oncontextmenu="return false" onselectstart="return false">
+<footer th:fragment="copy">
+<footer class="footer bg-style" >
+    <div class="footer-upper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <a href="#">
+                            <img src="img/resources/footer-logo.png" alt="Awesome Image"/>
+                        </a>
+                        <p><br>Please contact us below in the following ways</p>
+                        <ul class="contact">
+                            <li><i class="fa fa-map-marker"></i> <span>China Jiangsu Wuxi </span></li>
+                            <li><i class="fa fa-phone"></i> <span>0510-85182889</span></li>
+                            <li><i class="fa fa-envelope-o"></i> <span>Info@newtecharmor.com</span></li>
+                        </ul>
+                        <ul class="social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="footer-widget quick-links">
+                        <h3 class="title">Newtech</h3>
+                        <ul>
+                            <li><a href="http://www.templatesy.com/demo/605/service-details.html">Home</a>
+                            </li>
+                            <li><a href="http://www.templatesy.com/demo/605/service-details.html">Products</a>
+                            </li>
+                            <li><a href="http://www.templatesy.com/demo/605/service-details.html">News</a>
+                            </li>
+                            <li><a href="http://www.templatesy.com/demo/605/service-details.html">About</a>
+                            </li>
+                            <li><a href="http://www.templatesy.com/demo/605/service-details.html">Contact</a>
+                            </li>
+                            <li><a href="http://www.templatesy.com/demo/605/service-details.html">Website Map</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="footer-widget quick-links">
+                        <h3 class="title">Products</h3>
+                        <ul>
+
+                            <li th:each="type : ${types}"><a th:href="'/'+${type.label}" th:text="${type.label}">NIJ III+ Hard Armor
+                                Plates</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+               
+                <div class="col-md-3 latest-post col-sm-6">
+                    <div class="footer-widget latest-post news-post">
+                        <h3 class="title">News</h3>
+                        <ul>
+                            <li th:each="item : ${news.data}">
+                                <span class="border"><img src="./img/resources/s1.jpg" alt=""></span>
+                                <div class="content">
+                                    <a th:href="'/news/'+${item.id}" th:text="${item.title}"></a>
+                                    <span th:text="${item.gmtCreate}">31 Dec, 2017</span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="footer-widget quick-links">
+                        <h3 class="title">Blogroll</h3>
+                        <ul>
+                            <li>
+                                
+                                <div class="content">
+                                    <a href="https://www.baidu.com">baidu</a>
+                                        
+                                </div>
+                            </li>
+                            <li>
+                               
+                                <div class="content">
+                                   <a href="https://www.baidu.com"> Etiam dignissim sit
+                                        amet felis ac sagittis. Sed libero</a>
+                                        
+                                </div>
+                            </li>
+                            <li>
+                                <span class="border"><img src="./img/resources/s3.jpg" alt=""></span>
+                                <div class="content">
+                                    <a href="http://www.templatesy.com/demo/605/blog-details.html">Etiam dignissim sit
+                                        amet felis ac sagittis. Sed libero</a>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container text-center">
+            <p>Copyright &copy; 2017.Company name All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!--dialog -->
+<div class="dialog">
+    <h4>警用摩托车</h4>
+    <i class="fa fa-close" id="close_dialog"></i>
+</div>
+
+<!-- main jQuery -->
+<script th:src="@{/js/jquery.js}"></script>
+<!-- bootstrap -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- bx slider -->
+<script th:src="@{/js/jquery.bxslider.min.js}"></script>
+<!-- appear js -->
+<script th:src="@{/js/jquery.appear.js}"></script>
+<!-- count to -->
+<script th:src="@{/js/jquery.countTo.js}"></script>
+<!-- owl carousel -->
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<!-- validate -->
+<script th:src="@{/js/validate.js}"></script>
+<!-- mixit up -->
+<script th:src="@{/js/jquery.mixitup.min.js}"></script>
+<!-- fancybox -->
+<script th:src="@{/js/jquery.fancybox.pack.js}"></script>
+<!-- easing -->
+<script th:src="@{/js/jquery.easing.min.js}"></script>
+<!-- isotope script -->
+<script th:src="@{/js/isotope.pkgd.min.js}"></script>
+<!-- jQuery ui js -->
+<script th:src="@{/js/jquery-ui-1.11.4/jquery-ui.js}"></script>
+<!-- revolution scripts -->
+<script th:src="@{/revolution/js/jquery.themepunch.tools.min.js}"></script>
+<script th:src="@{/revolution/js/jquery.themepunch.revolution.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.actions.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.carousel.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.kenburn.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.layeranimation.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.migration.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.navigation.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.parallax.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.slideanims.min.js}"></script>
+<script type="text/javascript" th:src="@{/revolution/js/extensions/revolution.extension.video.min.js}"></script>
+<!-- thm custom script -->
+<script th:src="@{/js/custom.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+</footer>
+</body>
+
+</html>
+

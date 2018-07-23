@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SERVICE-K</title>
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- master stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- responsive stylesheet -->
+    <link rel="stylesheet" href="/css/bootstrap-margin-padding.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <script>
+    (function(){
+        var canonicalURL, curProtocol;
+        //Get the <link> tag
+        var x=document.getElementsByTagName("link");
+        //Find the last canonical URL
+        if(x.length > 0){
+            for (i=0;i<x.length;i++){
+                if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+                    canonicalURL=x[i].href;
+                }
+            }
+        }
+        //Get protocol
+        if (!canonicalURL){
+            curProtocol = window.location.protocol.split(':')[0];
+        }
+        else{
+            curProtocol = canonicalURL.split(':')[0];
+        }
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+</script>
+
+</head>
+
+<!-- Preloader -->
+<!-- <div class="preloader"></div> -->
+<body oncontextmenu="return false" onselectstart="return false">
+<!-- 公共头部 start -->
+<!-- Preloader -->
+<div class="preloader" style="display: none;"></div>
+<header th:replace="header :: header"></header>
+<!-- 公共头部end -->
+<!-- slider start -->
+<section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 sec-title colored text-center">
+                <h2>Products</h2>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- slider end -->
+<!-- normalmenu start -->
+<nav class="normalmenu-area">
+    <div class="container text-center">
+        <div class="navigation2">
+            <div class="nav-header">
+                <ul>
+                    <li><a href="index.html">ALL</a></li>
+                    <li th:each="item : ${catTypes}">
+                        <a th:href="'/category/'+${type}" th:text="${item.label}">Hard Armor Plate</a>
+                    </li>
+                    <li class="right">
+                        <!--
+                        <input type="text" name="title" value="" placeholder="Key Words" id="search">
+                        <i class="fa fa-search" id="search_icon"></i> -->
+                        <form action="/search">
+                            <input type="text" name="title" placeholder="Search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+
+                    </li>
+                </ul>
+                <!-- 搜索框 -->
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- normalmenu end -->
+<!-- 面包屑 start -->
+<section class="pt-20">
+    <div class="container">
+        <ul class="breadcumb">
+            <li><a href="index.html">Home</a></li>
+            <li><i class="fa fa-angle-right"></i></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<!-- 面包屑 end -->
+<!--专区描述 start-->
+<section class="py-60 mt-40 pt-50">
+    <div class="container">
+        <div class="sec-title text-center mb-40">
+            <h1><span class="color-black">Hard Armor Plate</span></h1>
+            <span class="decor"><span class="inner"></span></span>
+        </div>
+        <div class="row style-three mb-40">
+            <div class="col-md-6 col-sm-6">
+                <div class="row">
+                    <div class="single-service-home">
+                        <div class="content color=gray">
+                            
+                            <p>Since 2005, in response to the escalating gun threat, we have been committed to improving our existing products and developing new materials and bulletproof equipments.Now, we can produceNIJ 0101.06 certified level IIIA, IIIand IV plates (including PE plates, Alumina plates, silicon carbide plates, single curved plates and multiple curved plates, etc.) to meet the different needs of customers.<br>
+                                The application of new technologies and designs have already provided our products with lighter weight, better protective capability and lower price. Even so, westill insist on developing new materials and equipment designs.<br>
+                            If you have any customizationneeds, please contact us immediately. We will provide solutions for you as soon as possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pl-30">
+                <img class="full-width" src="/img/about/1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!--专区描述 end-->
+<!--装备列表1 start-->
+<section class="mb-60 pt-20" th:each="item : ${catProducts.list}">
+    <div class="container">
+        <div class="sec-title text-center mb-20">
+            <h1><span class="color-black" th:text="${item.productTypeName}">NIJ Level III Hard Armor Plates</span></h1>
+            <span class="decor"><span class="inner"></span></span>
+        </div>
+
+        <div class="row mb-20">
+            <div class="text-center col-lg-3 col-md-6" th:each="p : ${item.list}">
+                <div class="cate-bnr-sngle bordered">
+                    <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(p.logo,',')[0]}" alt="">
+                    <p th:text="${p.title}">FDY-101快穿式防弹背心</p>
+                    <div class="cate-content text-center">
+                        <a th:href="'/product/'+${p.id}">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--装备列表2 end-->
+<!--重点推荐 start-->
+<section class="call-to-action home-one">
+    <div class="container-fluid">
+        <div class="clearfix">
+            <div class="call-to-action-corner col-md-6"
+                 style="background-image: url(img/call-to-action/left-box-bg.jpg);">
+                <a href="index.html">
+                    <div class="single-call-to-action open-hours">
+                        <div class="img-box  pt-60 ">
+                                <div class="col-lg-2 col-md-2">
+                                    <img class="full-width" src="/img/resources/icon-hardaqrmorplate.png">
+                                </div>
+                            </div>
+                      
+                        <div class="content-box meet-doctors  pb-10 pl-10">
+                            <h3 class="title">Chemical Research</h3>
+                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+                                mazim
+                                placerat facer possim assum. Lorem ipsum dolor sit amet. <span>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="call-to-action-center col-md-6"
+                 style="background-image: url(img/call-to-action/center-box-bg.jpg);">
+                <a href="index.html">
+                    <div class="single-call-to-action">
+                        <div class="img-box  pt-60 ">
+                                <div class="col-lg-2 col-md-2">
+                                    <img class="full-width" src="/img/resources/icon-ballisticvest.png">
+                                </div>
+                            </div>
+                        <div class="content-box meet-doctors pb-10 pl-10">
+                            <h3 class="title">Petroleum And Gas</h3>
+                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+                                mazim
+                                placerat facer possim assum. Lorem ipsum dolor sit amet. <span>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--重点推荐 end-->
+<footer th:replace="footer :: copy"></footer>
+</body>
+
+</html>
+

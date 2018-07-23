@@ -18,5 +18,5 @@ interface ProductServiceAware  {
 
     fun findById(id:Long) : Product
 
-    fun findByProductTypeId(type:Long):List<ProductResult>
+    fun findByProductTypeId(type:Long):List<Product>
 }

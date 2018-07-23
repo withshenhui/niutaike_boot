@@ -42,7 +42,7 @@ class ProductService : ProductServiceAware {
 
     override fun findById(id: Long): Product = productRepository.findById(id).get()
 
-    override fun findByProductTypeId(type: Long): List<ProductResult> {
+    override fun findByProductTypeId(type: Long): List<Product> {
         return productRepository.findByProductTypeId(type)
     }
 

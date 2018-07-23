@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface ProductRepository : CrudRepository<Product,Long> {
 
-    fun findByProductTypeId(type:Long):List<ProductResult>
+    fun findByProductTypeId(type:Long):List<Product>
 }

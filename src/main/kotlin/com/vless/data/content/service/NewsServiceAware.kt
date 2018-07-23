@@ -14,4 +14,7 @@ interface NewsServiceAware  {
 
     fun findById(id:Long) : News
 
+    fun selectNext(id:Long) : News?
+
+    fun selectPrev(id:Long) : News?
 }

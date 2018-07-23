@@ -18,7 +18,7 @@
     </sql>
 
     <sql id="list_condition">
-        <if test="productTypeId!=null">
+        <if test="productTypeId!=null and productTypeId!=0">
             and a.product_type_id = #{productTypeId}
         </if>
 
