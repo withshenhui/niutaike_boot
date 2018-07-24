@@ -1,0 +1,73 @@
+.continer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+ 	flex-wrap: wrap;
+ 	align-items:center;
+}
+
+.list-single{
+	width: 250px;
+	height: 350px;
+	background-color: #f00;
+}
+
+
+
+@media screen and (max-width: 600px) {
+	.list-single{
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
