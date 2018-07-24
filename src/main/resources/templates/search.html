@@ -70,9 +70,9 @@
                         <!--
                         <input type="text" name="title" value="" placeholder="Key Words" id="search">
                         <i class="fa fa-search" id="search_icon"></i> -->
-                        <form action="/search">
-                            <input type="text" name="title" placeholder="Search">
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                        <form action="/search" name="searchForm">
+                            <input type="text" name="title" value="" placeholder="Key Words" id="search">
+                            <i class="fa fa-search" id="search_icon" onclick="subSearchForm();"></i>
                         </form>
 
                     </li>
@@ -106,7 +106,7 @@
                         <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(item.logo,',')[0]}" alt="">
                         <p th:text="${item.title}">FDY-101快穿式防弹背心</p>
                             <div class="cate-content text-center">
-                                <a th:href="'/product/'+${item.id}">查看详情</a>
+                                <a th:href="'/product/'+${item.id}">View Detail</a>
                             </div>
                     </div>
                 </div>
@@ -162,7 +162,11 @@
 </section>
 <!--重点推荐 end-->
 <footer th:replace="footer :: copy"></footer>
-
+<script>
+    function subSearchForm(){
+        document.searchForm.submit();
+    }
+</script>
 </body>
 
 </html>

@@ -85,8 +85,10 @@
                         <a href="#" th:text="${item.label}">Hard Armor Plate</a>
                     </li>
                     <li class="right">
-                        <input type="text" name="" value="" placeholder="Key Words" id="search">
-                        <i class="fa fa-search" id="search_icon"></i>
+                        <form action="/search" name="searchForm">
+                        <input type="text" name="title" value="" placeholder="Key Words" id="search">
+                        <i class="fa fa-search" id="search_icon" onclick="subSearchForm();"></i>
+                        </form>
                     </li>
                 </ul>
                 <!-- 搜索框 -->
@@ -353,6 +355,10 @@
             */
         });
 
+    }
+    
+    function subSearchForm(){
+        document.searchForm.submit();
     }
 </script>
 
