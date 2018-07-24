@@ -49,6 +49,12 @@ class MainController {
         return "index"
     }
 
+    @GetMapping("/sitemap")
+    fun sitemap(model: Model): String{
+
+        return "sitemap"
+    }
+
     @GetMapping("/category/{id}")
     fun category(@PathVariable id:Long,model: Model): String{
         if(id<=0)
