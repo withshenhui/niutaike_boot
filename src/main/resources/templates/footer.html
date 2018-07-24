@@ -52,7 +52,7 @@
                         <h3 class="title">Products</h3>
                         <ul>
 
-                            <li th:each="type : ${types}"><a th:href="'/'+${type.label}" th:text="${type.label}">NIJ III+ Hard Armor
+                            <li th:each="type : ${types}"><a th:href="'/category/'+${type.id}" th:text="${type.label}">NIJ III+ Hard Armor
                                 Plates</a>
                             </li>
 
