@@ -36,11 +36,12 @@ class MainController {
         newsQuery.limit=100
         newsQuery.showIndex=true
         val listNews=newsService.findPage(newsQuery)
-        var productIndexQuery=ProductIndexQuery()
-        val listProducts=productService.findList(productIndexQuery)
+        var productQuery=ProductQuery()
+        productQuery.limit=8
+        val page=productService.findPage(productQuery)
         model.addAttribute("news",listNews)
         model.addAttribute("news1",listNews.data!!.get(0))
-        model.addAttribute("products",listProducts)
+        model.addAttribute("products",page.data)
 
         var newsQueryLeft=NewsQuery()
         newsQueryLeft.limit=4
