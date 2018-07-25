@@ -66,7 +66,6 @@
                         <h3 class="title">News</h3>
                         <ul>
                             <li th:each="item : ${news.data}">
-                                <span class="border"><img src="./img/resources/s1.jpg" alt=""></span>
                                 <div class="content">
                                     <a th:href="'/news/'+${item.id}" th:text="${item.title}"></a>
                                     <span th:text="${item.gmtCreate}">31 Dec, 2017</span>
@@ -96,7 +95,6 @@
                                 </div>
                             </li>
                             <li>
-                                <span class="border"><img src="./img/resources/s3.jpg" alt=""></span>
                                 <div class="content">
                                     <a href="http://www.templatesy.com/demo/605/blog-details.html">Etiam dignissim sit
                                         amet felis ac sagittis. Sed libero</a>

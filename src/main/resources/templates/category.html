@@ -35,7 +35,26 @@
         //Assign script content. Replace current URL with the canonical URL
         !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
-
+    <style>
+        .text-center{
+            padding-top: 20px;
+        }
+        .cate-bnr-sngle>img{
+            width: 271px;
+            height: 275px;
+        }
+        .cate-bnr-sngle>p{
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            padding: 0 20px;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .cate-content{
+            padding-top: 135px;
+        }
+    </style>
 </head>
 
 <!-- Preloader -->
