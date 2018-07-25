@@ -30,7 +30,6 @@ class ProductTypeService : ProductTypeServiceAware {
     override fun delete(id: Long) {
         val p=productTypeRepository.findById(id).get()
         if(p.parent>0){
-            productTypeRepository.deleteById(id)
             productMapper.deleteByProductTypeId(id)
         }else{
             //删除子分类
@@ -40,7 +39,7 @@ class ProductTypeService : ProductTypeServiceAware {
                 productMapper.deleteByProductTypeId(son.id)
             }
         }
-
+        productTypeRepository.deleteById(id)
     }
 
     @Transactional(readOnly = true)
