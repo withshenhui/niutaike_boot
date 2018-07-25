@@ -492,8 +492,8 @@
         <div class="row">
             <div class="col-md-6 col-sm-12 sm-col-center mb-sm-40">
                 <div class="single-blog-post">
-                    <div class="img-box " th:each="item : ${news.data}">
-                        <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="">
+                    <div class="img-box " th:each="item : ${newsLeft.data}" style="padding: 10px">
+                        <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="" style="max-height: 167px;">
                         <div class="firstNew">
                             <h4 th:text="${item.title}">新闻标题</h4>
                             <span> <a href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span>
@@ -503,8 +503,8 @@
             </div>
             <div class="col-md-6 col-sm-12 sm-col-center mb-sm-40">
                 <div class="single-blog-post">
-                    <div class="img-box " th:each="item : ${news.data}">
-                        <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="">
+                    <div class="img-box " th:each="item : ${newsRight.data}" style="padding: 10px">
+                        <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="" style="max-height: 167px;">
                         <div class="firstNew">
                             <h4 th:text="${item.title}">新闻标题</h4>
                             <span> <a href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span>

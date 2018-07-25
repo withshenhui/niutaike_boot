@@ -65,7 +65,7 @@
                     <div class="footer-widget latest-post news-post">
                         <h3 class="title">News</h3>
                         <ul>
-                            <li th:each="item : ${news.data}">
+                            <li th:each="item : ${newsLeft.data}">
                                 <div class="content">
                                     <a th:href="'/news/'+${item.id}" th:text="${item.title}"></a>
                                     <span th:text="${item.gmtCreate}">31 Dec, 2017</span>

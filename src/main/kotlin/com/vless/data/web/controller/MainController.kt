@@ -41,6 +41,16 @@ class MainController {
         model.addAttribute("news",listNews)
         model.addAttribute("news1",listNews.data!!.get(0))
         model.addAttribute("products",listProducts)
+
+        var newsQueryLeft=NewsQuery()
+        newsQueryLeft.limit=4
+        newsQueryLeft.showIndex=true
+        model.addAttribute("newsLeft",newsService.findPage(newsQueryLeft))
+        var newsQueryRight=NewsQuery()
+        newsQueryRight.limit=4
+        newsQueryRight.page=2
+        newsQueryRight.showIndex=true
+        model.addAttribute("newsRight",newsService.findPage(newsQueryRight))
     }
 
     @GetMapping("/")
