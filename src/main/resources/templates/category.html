@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121843222-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121843222-1');
+</script>
+
     <meta charset="UTF-8">
-    <title>SERVICE-K</title>
+    <title th:text="${typeName}">SERVICE-K</title>
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- master stylesheet -->
@@ -35,6 +45,8 @@
         //Assign script content. Replace current URL with the canonical URL
         !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
+
+
     <style>
         .text-center{
             padding-top: 20px;
@@ -79,7 +91,7 @@
 <!-- slider end -->
 <!-- normalmenu start -->
 <nav class="normalmenu-area">
-    <div class="container text-center">
+    <div class="container text-center p-0">
         <div class="navigation2">
             <div class="nav-header">
                 <ul>
@@ -87,15 +99,12 @@
                     <li th:each="item : ${catTypes}">
                         <a th:href="'/category/'+${type}" th:text="${item.label}">Hard Armor Plate</a>
                     </li>
-                    <li class="right">
-                        <!--
-                        <input type="text" name="title" value="" placeholder="Key Words" id="search">
-                        <i class="fa fa-search" id="search_icon"></i> -->
-                        <form action="/search" name="searchForm">
-                            <input type="text" name="title" value="" placeholder="Key Words" id="search">
-                            <i class="fa fa-search" id="search_icon" onclick="subSearchForm();"></i>
-                        </form>
-                    </li>
+                    <ul>
+                <li class="right ">
+                            <input type="text" name="" value="" placeholder="Key Words" id="search">
+                            <i class="fa fa-search" id="search_icon"></i>
+                        </li>
+                    </ul>
                 </ul>
                 <!-- 搜索框 -->
             </div>
@@ -118,7 +127,7 @@
 <section class="py-60 mt-40 pt-50">
     <div class="container">
         <div class="sec-title text-center mb-40">
-            <h1><span class="color-black">Hard Armor Plate</span></h1>
+            <h1><span class="color-black">About our products</span></h1>
             <span class="decor"><span class="inner"></span></span>
         </div>
         <div class="row style-three mb-40">
@@ -127,9 +136,9 @@
                     <div class="single-service-home">
                         <div class="content color=gray">
                             
-                            <p>Since 2005, in response to the escalating gun threat, we have been committed to improving our existing products and developing new materials and bulletproof equipments.Now, we can produceNIJ 0101.06 certified level IIIA, IIIand IV plates (including PE plates, Alumina plates, silicon carbide plates, single curved plates and multiple curved plates, etc.) to meet the different needs of customers.<br>
-                                The application of new technologies and designs have already provided our products with lighter weight, better protective capability and lower price. Even so, westill insist on developing new materials and equipment designs.<br>
-                            If you have any customizationneeds, please contact us immediately. We will provide solutions for you as soon as possible.</p>
+                            <p>Since 2005, in response to the escalating gun threat, we have been committed to improving our existing products and developing new materials and bulletproof equipment.Our products are all NIJ 0101.06 certified with different protection levels(NIJ IIIA, NIJ III, NIJ III+ and NIJ IV) including hard armor plates, ballistic vests, tactical vests and bulletproof shields.<br>
+                                The application of new technologies and designs have already provided our products with lighter weight and better protective capability. We also meet different requirements by the use of different materials.<br><br>
+                            If there are any customization needs, please contact us immediately. Wwe will offer free counselling service to you..</p>
                         </div>
                     </div>
                 </div>

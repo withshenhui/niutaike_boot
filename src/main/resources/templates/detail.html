@@ -2,6 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121843222-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121843222-1');
+</script>
+
     <meta charset="UTF-8">
     <title th:text="${product.seoTitle}"></title>
     <!-- responsive meta -->
@@ -48,6 +58,8 @@
             }(window);
         })();
     </script>
+
+
     <style>
         .text-center{
             padding-top: 20px;
@@ -95,7 +107,7 @@
 
 <!-- normalmenu start -->
 <nav class="normalmenu-area">
-    <div class="container text-center">
+    <div class="container text-center p-0">
         <div class="row navigation2">
             <div class="nav-header">
                 <ul>
@@ -103,14 +115,17 @@
                     <li th:each="item : ${catTypes}">
                         <a href="#" th:text="${item.label}">Hard Armor Plate</a>
                     </li>
-                    <li class="right">
+                    
+                </ul>
+                <!-- 搜索框 -->
+                <ul>
+                <li class="right">
                         <form action="/search" name="searchForm">
                         <input type="text" name="title" value="" placeholder="Key Words" id="search">
                         <i class="fa fa-search" id="search_icon" onclick="subSearchForm();"></i>
                         </form>
                     </li>
                 </ul>
-                <!-- 搜索框 -->
             </div>
         </div>
     </div>
@@ -169,9 +184,9 @@
                 </p>
             </div>
             <div class="col-md-6 col-sm-12 pl-15">
-                <a class="thm-btn btn-black mr-10" href="/contact">联系我们</a>
-                <a class="thm-btn mr-10" href="#">咨询定制</a>
-                <a class="thm-btn mr-10" href="#">下载PDF</a>
+                <a class="thm-btn btn-black mr-10" href="/contact">Any Question?</a>
+                <a class="thm-btn mr-10" href="/contact">Contact Us</a>
+                
             </div>
         </div>
     </div>
@@ -181,7 +196,7 @@
 <section>
     <div class="container">
         <div class="sec-title meet-doctors  style-two mb-20">
-            <h2>产品详情</h2>
+            <h2></h2>
             <span class="decor">
                     <span class="inner"></span>
                     </span>
@@ -210,9 +225,9 @@
                             </div>
                         </div>
                         <div class="content-box">
-                            <h4>地址</h4>
-                            <p>江苏省无锡市滨湖区, 胡埭工业园区南区,
-                                <br>张舍路, 9号</p>
+                            <h4>Adress</h4>
+                            <p>No. 9, Zhangshe Road South area of the Hu Tai Industrial Park, Binhu District, 
+                                Wuxi, Jiangsu Province</p>
                         </div>
                     </li>
                     <li>
@@ -222,9 +237,8 @@
                             </div>
                         </div>
                         <div class="content-box">
-                            <h4>电话</h4>
-                            <p><a href="tel:0510-85182889"><font color="gray"> 0510-85182889 销售部座机</font></a>,<br>
-                                <a href="tel:15062208501"><font color="gray">15062208501 周经理</font></a></p>
+                            <h4>Tel</h4>
+                            <p><a href="tel:0510-85182889"><font color="gray"> 0510-85182889 </font></a></p>
                         </div>
                     </li>
                     <li>
@@ -234,22 +248,12 @@
                             </div>
                         </div>
                         <div class="content-box">
-                            <h4>邮箱</h4>
+                            <h4>Mail</h4>
                             <p><a href="mailto:info@newtecharmor.com"><font
                                     color="gray">info@newtecharmor.com</font></a></p>
                         </div>
                     </li>
-                    <li>
-                        <div class="icon-box">
-                            <div class="inner">
-                                <i class="fa fa-qq"></i>
-                            </div>
-                        </div>
-                        <div class="content-box">
-                            <h4>QQ</h4>
-                            <p>596226310</p>
-                        </div>
-                    </li>
+                    
                 </ul>
 
             </div>
@@ -297,10 +301,8 @@
                             </div>
                       
                         <div class="content-box meet-doctors  pb-10 pl-10">
-                            <h3 class="title">Chemical Research</h3>
-                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
-                                mazim
-                                placerat facer possim assum. Lorem ipsum dolor sit amet. <span>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+                            <h3 class="title">Hard Armor Plate</h3>
+                            <p>Since 2005, in response to the escalating gun threat, we have been committed to improving our existing products and developing new materials and bulletproof equipments.</span>
                             </p>
                         </div>
                     </div>
@@ -316,10 +318,8 @@
                                 </div>
                             </div>
                         <div class="content-box meet-doctors pb-10 pl-10">
-                            <h3 class="title">Petroleum And Gas</h3>
-                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
-                                mazim
-                                placerat facer possim assum. Lorem ipsum dolor sit amet. <span>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+                            <h3 class="title">Ballistic Vests</h3>
+                            <p>In recent years, with the aggravation of gun threats, ballistic vest has been used more and more widely. In response to this, we have paid more and more efforts on developing new products with various sizes and colors to meet the different needs of our customers.</span>
                             </p>
                         </div>
                     </div>

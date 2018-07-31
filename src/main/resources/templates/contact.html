@@ -2,6 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121843222-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121843222-1');
+</script>
+
     <meta charset="UTF-8">
     <title>联系我们-无锡钮钛科新材料科技有限公司</title>
     <meta name="Keywords" content="江苏无锡钮钛科新材料，防刺服，防弹插板，防弹衣，防弹盾牌">
@@ -39,6 +49,7 @@
         //Assign script content. Replace current URL with the canonical URL
         !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
+
 
 </head>
 
@@ -143,9 +154,7 @@
                     </li>
                 </ul>
             </div>
-             <div class="img-box col-md-5 col-sm-12 mt-60 ml-120 pl-60">
-                    <div id="gdmapcontainer"></div>
-                </div>
+             
         </div>
     </div>
 </section>
@@ -224,14 +233,7 @@
 <footer th:replace="footer :: copy"></footer>
 
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=e6f4128feb2165319ef4b6f7a03b0490"></script>
-<script>
-    var map = new AMap.Map('gdmapcontainer', {
-        resizeEnable: true,
-        zoom:16,//缩放级别
-        center: [120.144, 31.56]//定位中心点位置
-    });
 
-</script>
 </body>
 
 </html>

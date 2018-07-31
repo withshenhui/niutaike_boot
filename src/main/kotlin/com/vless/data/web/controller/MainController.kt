@@ -98,6 +98,7 @@ class MainController {
         val listType=productTypeService.findByParent(id)
         model.addAttribute("catTypes",listType)
         model.addAttribute("type",id)
+        model.addAttribute("typeName",productTypeService.findById(id).label)
         return "category"
     }
 

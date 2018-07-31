@@ -1,6 +1,16 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121843222-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121843222-1');
+</script>
+
     <meta charset="UTF-8">
     <title th:text="${newsDetail.title}">(新闻标题) - NewTech Armor</title>
     <meta name="Keywords" content="Body Armor, level III Hard Armor Plates, Ballstic Vests, Bulletproof Shields, Ballistic Plates, Body Armor Plates">
@@ -77,7 +87,7 @@
     </section>
     <!-- normalmenu start -->  
     <nav class="normalmenu-area">
-        <div class="container text-center">
+        <div class="container text-center p-0">
             <div class="navigation2">
                 <div class="nav-header">
                     <ul>
@@ -119,7 +129,7 @@
                 <div>
                 <div class="col-md-6 text-left" th:if="${nextNews!=null}">
                     <div class="row">
-                    <a th:href="'/news/'+${nextNews.id}"> <i class="fa fa-arrow-left"></i> <span>下一篇</span></a>
+                    <a th:href="'/news/'+${nextNews.id}"> <i class="fa fa-arrow-left"></i> <span>next</span></a>
                     </div>
                     <div class="row" th:text="${nextNews.title}">
                         this is a title
@@ -127,7 +137,7 @@
                 </div>
                 <div class="col-md-6 text-right" th:if="${prevNews!=null}">
                     <div class="row">
-                        <a th:href="'/news/'+${prevNews.id}"><span >上一篇</span><i class="fa fa-arrow-right"></i>
+                        <a th:href="'/news/'+${prevNews.id}"><span >last</span><i class="fa fa-arrow-right"></i>
                         </a></div>
                     <div class="row" th:text="${prevNews.title}">
                         this is a title
@@ -142,11 +152,11 @@
                         <div class="single-sidebar-widget search">
                             <form action="/news">
                                 <input type="text" name="title" placeholder="Search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
+                                <button type="submit"><i class="fa fa-search">Latest News</i></button>
                             </form>
                         </div>
                         <div class="single-sidebar-widget category">
-                            <h3 class="title">推荐新闻</h3>
+                            <h3 class="title"></h3>
                             <ul>
                                 <li th:each="item : ${news.data}">
                                     <a th:href="'/news/'+${item.id}" th:text="${item.title}">Chemical Research</a></li>
@@ -161,7 +171,7 @@
     <section class="meet-doctors pt-50 pb-70" data-bg-color="#f7f7f7">
         <div class="container">
             <div class="sec-title style-two mb-20">
-                <h2>相关产品</h2>
+                <h2>Relevent Products</h2>
                     <span class="decor">
                     <span class="inner"></span>
                     </span>

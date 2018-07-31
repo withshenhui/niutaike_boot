@@ -464,7 +464,7 @@ li {
 
 .mainmenu-area {
     background: #000;
-    border-bottom: 4px solid #fbca00;
+    border-bottom: 4px ;
 }
 
 .mainmenu-area.stricky-fixed {
@@ -4743,9 +4743,12 @@ li {
     background: #55acee none repeat scroll 0 0;
 }
 .fellow > ul li:nth-child(3){
-    background: #c91613 none repeat scroll 0 0;
+    background: #3366CC none repeat scroll 0 0;
 }
 .fellow > ul li:nth-child(4){
+    background: #CC0000 none repeat scroll 0 0;
+}
+.fellow > ul li:nth-child(5){
     background: #000000 none repeat scroll 0 0;
 }
 

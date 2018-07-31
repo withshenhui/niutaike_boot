@@ -1,6 +1,16 @@
 ﻿<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121843222-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121843222-1');
+</script>
+
 </head>
 <body oncontextmenu="return false" onselectstart="return false">
 <footer th:fragment="copy">
@@ -20,10 +30,10 @@
                             <li><i class="fa fa-envelope-o"></i> <span>Info@newtecharmor.com</span></li>
                         </ul>
                         <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="https://www.facebook.com/NewtechArmor/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/NewtechArmorUS"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/u/0/109816087792818443710"><i class="fa fa-google-plus"></i></a></li>
+                            
 
                         </ul>
                     </div>
@@ -80,27 +90,7 @@
                         <h3 class="title">Blogroll</h3>
                         <ul>
                             <li>
-                                
-                                <div class="content">
-                                    <a href="https://www.baidu.com">baidu</a>
-                                        
-                                </div>
-                            </li>
-                            <li>
-                               
-                                <div class="content">
-                                   <a href="https://www.baidu.com"> Etiam dignissim sit
-                                        amet felis ac sagittis. Sed libero</a>
-                                        
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content">
-                                    <a href="http://www.templatesy.com/demo/605/blog-details.html">Etiam dignissim sit
-                                        amet felis ac sagittis. Sed libero</a>
-                                    
-                                </div>
-                            </li>
+                                 </li>
                         </ul>
                     </div>
                 </div>
@@ -115,10 +105,7 @@
 </footer>
 
 <!--dialog -->
-<div class="dialog">
-    <h4>警用摩托车</h4>
-    <i class="fa fa-close" id="close_dialog"></i>
-</div>
+
 
 <!-- main jQuery -->
 <script th:src="@{/js/jquery.js}"></script>
