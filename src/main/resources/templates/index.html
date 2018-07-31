@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿﻿﻿<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -503,8 +503,9 @@
                         <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="" style="max-height: 167px;">
                         <div class="firstNew">
                             <h4 th:text="${item.title}">新闻标题</h4>
-                            <p><br th:text="${item.gmtCreate}">
-                                <span> <a th:href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span></p>
+                            <p>
+                                <span> <a th:href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span>
+                                <br th:text="${#dates.format(item.gmtCreate, 'yyyy-MM-dd')}"></p>
                         </div>
                     </div>
                 </div>
@@ -515,8 +516,9 @@
                         <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="" style="max-height: 167px;">
                         <div class="firstNew">
                             <h4 th:text="${item.title}">新闻标题</h4>
-                            <p> <br th:text="${item.gmtCreate}">
-                                <span> <a th:href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span></p>
+                            <p>
+                                <span> <a th:href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span>
+                                <br th:text="${#dates.format(item.gmtCreate, 'yyyy-MM-dd')}"></p>
                         </div>
                     </div>
                 </div>
