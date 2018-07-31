@@ -152,11 +152,11 @@
                         <div class="single-sidebar-widget search">
                             <form action="/news">
                                 <input type="text" name="title" placeholder="Search">
-                                <button type="submit"><i class="fa fa-search">Latest News</i></button>
+                                <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
                         <div class="single-sidebar-widget category">
-                            <h3 class="title"></h3>
+                            <h3 class="title">Latest News</h3>
                             <ul>
                                 <li th:each="item : ${news.data}">
                                     <a th:href="'/news/'+${item.id}" th:text="${item.title}">Chemical Research</a></li>
