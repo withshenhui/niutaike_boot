@@ -4,6 +4,7 @@ import com.vless.data.common.BizException
 import com.vless.data.content.query.NewsQuery
 import com.vless.data.content.query.ProductIndexQuery
 import com.vless.data.content.query.ProductQuery
+import com.vless.data.content.query.ProductTypeQuery
 import com.vless.data.content.result.ProductIndexResult
 import com.vless.data.content.result.ProductResult
 import com.vless.data.content.service.NewsServiceAware
@@ -30,7 +31,9 @@ class MainController {
 
     @ModelAttribute
     fun init(model: Model){
-        val listType=productTypeService.findByParent(0)
+        var productTypeQuery=ProductTypeQuery()
+        productTypeQuery.parent=0
+        val listType=productTypeService.findPage(productTypeQuery).data
         model.addAttribute("types",listType)
         var newsQuery=NewsQuery()
         newsQuery.limit=100
