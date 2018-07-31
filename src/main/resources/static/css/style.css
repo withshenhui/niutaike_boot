@@ -1978,7 +1978,7 @@ li {
     border-radius: 0;
 }
 .owl-theme .owl-nav .owl-prev
-{ 
+{
     position: absolute;
     left: 0;
 
@@ -1986,7 +1986,7 @@ li {
 
 
 .owl-theme .owl-nav .owl-next
-{ 
+{
     position: absolute;
     right: 0;
 
@@ -4779,50 +4779,50 @@ li {
 }
 /* ============= 2. Category Banner ============= */
 .cate-bnr-sngle{
-  display: block;
-  overflow: hidden;
-  position: relative;
-  cursor:pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    cursor:pointer;
 }
 .cate-content {
-  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  opacity:0;
-  transition:all 0.3s linear 0s;
-   padding-top: 48%;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity:0;
+    transition:all 0.3s linear 0s;
+    padding-top: 48%;
 }
 .cate-bnr-sngle:hover .cate-content {
-  opacity: 1;
+    opacity: 1;
 }
 .cate-content h6 {
-  color: #fff;
-  font-size: 20px;
-  margin: 0 0 20px;
-  transition: all 0.3s linear 0s;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 0 20px;
+    transition: all 0.3s linear 0s;
 }
 .cate-content > a {
-  border: 1px solid #fff;
-  color: #fff;
-  display: inline-block;
-  font-family: open sans;
-  font-weight: 700;
-  padding: 20px 60px;
-  text-transform: uppercase;
-  transition:.3s;
-  font-size:14px;
+    border: 1px solid #fff;
+    color: #fff;
+    display: inline-block;
+    font-family: open sans;
+    font-weight: 700;
+    padding: 20px 60px;
+    text-transform: uppercase;
+    transition:.3s;
+    font-size:14px;
 }
 .cate-content > a:hover {background: #fff;color:#333;}
 .about-us-content h2 {
-  font-size: 24px;
-  margin: 0 0 30px;
-  text-transform: uppercase;
+    font-size: 24px;
+    margin: 0 0 30px;
+    text-transform: uppercase;
 }
 .about-us-content p {
-  line-height: 32px;
-  margin-bottom: 30px;
+    line-height: 32px;
+    margin-bottom: 30px;
 }
 /* ============= 产品详情照片切换 ============= */
 
@@ -4846,29 +4846,29 @@ li {
     margin-right: 5px;
 }
 .photo-container .nav span{
-    display: block; 
-    text-align:center; 
-    line-height:40px; 
-    color:#666; 
-    float:left; 
+    display: block;
+    text-align:center;
+    line-height:40px;
+    color:#666;
+    float:left;
     cursor:pointer;
 }
 .photo-container .nav span.active{
-    background:#fff; 
+    background:#fff;
     color:#fff;
 }
 .photo-container .nav span:first-child{
     border:0px；
 }
-.photo-content{ 
+.photo-content{
     width: 315px;
     height: 320px;
-    position:relative; 
+    position:relative;
     overflow:hidden;
 } /*定位一般设置为relative，overflow设置为hidden来隐藏外面的内容*/
-.photo-content img{ 
+.photo-content img{
     height: 310px;
-    }
+}
 .photo-content .box{
     position:absolute;
 } /*这个定位设置为absolute, 因为要操作这个的位置来切换内容*/
@@ -4876,9 +4876,9 @@ li {
     float:left;
 }
 .photo-content ul li{
-    display: block; 
-    float:left; 
-    text-align:center; 
+    display: block;
+    float:left;
+    text-align:center;
     line-height:218px;
 }
 .photo-content ul li+li{
@@ -4886,7 +4886,6 @@ li {
 }
 
 .magnifier-container{
-    height: 280px;
+    height: 380px;
 }
-
 

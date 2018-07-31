@@ -152,11 +152,11 @@
                         <div class="single-sidebar-widget search">
                             <form action="/news">
                                 <input type="text" name="title" placeholder="Search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
+                                <button type="submit"><i class="fa fa-search">Latest News</i></button>
                             </form>
                         </div>
                         <div class="single-sidebar-widget category">
-                            <h3 class="title">Latest News</h3>
+                            <h3 class="title"></h3>
                             <ul>
                                 <li th:each="item : ${news.data}">
                                     <a th:href="'/news/'+${item.id}" th:text="${item.title}">Chemical Research</a></li>
@@ -195,7 +195,7 @@
     <div class="container-fluid">
         <div class="clearfix">
             <div class="call-to-action-corner col-md-6"
-                 style="background-image: url(img/call-to-action/left-box-bg.jpg);">
+                 style="background-image: url(/img/call-to-action/left-box-bg.jpg);">
                 <a href="/">
                     <div class="single-call-to-action open-hours">
                         <div class="img-box  pt-60 ">
@@ -215,7 +215,7 @@
                 </a>
             </div>
             <div class="call-to-action-center col-md-6"
-                 style="background-image: url(img/call-to-action/center-box-bg.jpg);">
+                 style="background-image: url(/img/call-to-action/center-box-bg.jpg);">
                 <a href="/">
                     <div class="single-call-to-action">
                         <div class="img-box  pt-60 ">

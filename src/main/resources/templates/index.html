@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121843222-1"></script>
@@ -23,7 +24,6 @@
     <!-- responsive stylesheet -->
     <link rel="stylesheet" href="/css/bootstrap-margin-padding.css">
     <link rel="stylesheet" href="/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="/css/magnifier.css">
     <script>
         (function () {
             var canonicalURL, curProtocol;
@@ -81,6 +81,7 @@
 </head>
 <!-- Preloader -->
 <!-- <div class="preloader"></div> -->
+<body oncontextmenu="return false" onselectstart="return false">
 <!-- 公共头部 start -->
 <!-- Preloader -->
 <div class="preloader" style="display: none;"></div>
@@ -301,7 +302,7 @@
             <div class="col-md-12 col-lg-6 ">
                 <div class="row mb-10 ">
                     <div class="col-md-12">
-                        <img class="full-width" src="/img/about/4.jpg" title=Newtech Advance material alt="">
+                        <img class="full-width" src="/img/about/NewtechArmor.jpg" title=Newtech Advance material alt="">
                     </div>
                 </div>
             </div>
@@ -347,7 +348,7 @@
                 <div class="item">
                     <div class="single-team-member text-center ml-0 pt-0">
                         <h3 class=" mb-10 ml-100 mr-100 color-gray">Dr. Lei and his team are very credible. Our collaboration began at 2005, and has gone well up to now. There has been no problem with order delivery and product quality yet. Newtech has been long committed to developing new technologies to increase the protection level of those bulletproof products while decrease their prices, which is just in line with our interest. I sincerely hope that our friendship and corporation will last forever!</h3>
-                        <h3>Kingdom of Saudi Arabia</h3>
+                        <h3 class="mt-40">Kingdom of Saudi Arabia</h3>
                         <span>land force</span>
 
                     </div>
@@ -355,7 +356,7 @@
                 <div class="item">
                     <div class="single-team-member text-center ml-0">
                         <h3 class="mb-40 ml-100 mr-100 color-gray">Dr. Lei and his team are very credible. Our collaboration began at 2005, and has gone well up to now. There has been no problem with order delivery and product quality yet. Newtech has been long committed to developing new technologies to increase the protection level of those bulletproof products while decrease their prices, which is just in line with our interest. I sincerely hope that our friendship and corporation will last forever!</h3>
-                        <h3>Kingdom of Saudi Arabia/h3>
+                        <h3 class="mt-40">Kingdom of Saudi Arabia</h3>
                             <span>land force</span>
 
                     </div>
@@ -489,7 +490,7 @@
 
 <!-- 新闻 -->
 <section class="blog-home mb-10 ">
-    <div class="container">
+    <div class="container mb-60 mt-40">
         <div class="sec-title style-two sm-text-left  mb-40">
             <h2><a class="text-uppercase color-black" href="/news">News</a></h2>
             <span class="decor">
@@ -516,9 +517,9 @@
                         <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="" style="max-height: 167px;">
                         <div class="firstNew">
                             <h4 th:text="${item.title}">新闻标题</h4>
-                            <p>
+                            <p> 
                                 <span> <a th:href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span>
-                                <br th:text="${#dates.format(item.gmtCreate, 'yyyy-MM-dd')}"></p>
+                            <br th:text="${#dates.format(item.gmtCreate, 'yyyy-MM-dd')}"></p>
                         </div>
                     </div>
                 </div>

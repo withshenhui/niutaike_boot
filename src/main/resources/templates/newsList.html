@@ -126,11 +126,8 @@
                         <div class="col-md-4 content-box ">
                             <div class="content ">
                                 <a th:href="'/news/'+${item.id}"><h3 th:text="${item.title}">Lates blog post with image </h3></a>
-                                <p>Lorem ipsum dolor sit amet, eum at error nonumy, mel agam dictas praesent no. Id vide
-                                    ignota it concl udatu rque mea. Veritus fierent ex quo, per cu elit prima. Ius
-                                    impedit nominati et, suas heu quidam mei ea. Sit erant at populo suavitate an, eu
-                                    est pericula persecuti, sea... </p>
-                                <span> <a th:href="'/news/'+${item.id}">READ MORE</a></span>
+                                <p>
+                                <span> <a th:href="'/news/'+${item.id}"><font class="color-theme">READ MORE</font></a></span><br th:text="${item.gmtCreate}"></p>
                             </div>
                         </div>
                     </div>
@@ -195,12 +192,12 @@
     <div class="container-fluid">
         <div class="clearfix">
             <div class="call-to-action-corner col-md-6"
-                 style="background-image: url(img/call-to-action/left-box-bg.jpg);">
+                 style="background-image: url(/img/call-to-action/left-box-bg.jpg);">
                 <a href="/">
                 <div class="single-call-to-action open-hours">
                     <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">
-                                    <img class="full-width" src="img/resources/icon-hardaqrmorplate.png">
+                                    <img class="full-width" src="/img/resources/icon-hardaqrmorplate.png">
                                 </div>
                             </div>
                       
@@ -215,12 +212,12 @@
                 </a>
             </div>
             <div class="call-to-action-center col-md-6"
-                 style="background-image: url(img/call-to-action/center-box-bg.jpg);">
+                 style="background-image: url(/img/call-to-action/center-box-bg.jpg);">
                 <a href="/">
                     <div class="single-call-to-action">
                         <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">
-                                    <img class="full-width" src="img/resources/icon-ballisticvest.png">
+                                    <img class="full-width" src="/img/resources/icon-ballisticvest.png">
                                 </div>
                             </div>
                         <div class="content-box meet-doctors pb-10 pl-10">
