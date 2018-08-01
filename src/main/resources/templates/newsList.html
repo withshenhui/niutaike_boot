@@ -121,7 +121,7 @@
                 <div class="single-blog-post mb-20 pb-40" th:each="item : ${newsList.data}">
                     <div class="row">
                         <div class="col-md-4 img-box mt-30">
-                            <img class="full-width" th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="">
+                            <img class="full-width" th:src="'/'+${item.logo}" alt="">
                         </div>
                         <div class="col-md-4 content-box ">
                             <div class="content ">
@@ -176,7 +176,7 @@
         <div class="row">
             <div class="text-center col-lg-3 col-md-6" th:each="item : ${rlProducts}">
                 <div class="cate-bnr-sngle bordered">
-                    <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(item.logo,',')[0]}" alt="">
+                    <img th:src="'/'+${#strings.listSplit(item.logo,',')[0]}" alt="">
                     <p th:text="${item.title}">FDY-101快穿式防弹背心</p>
                     <div class="cate-content text-center">
                         <a th:href="'/product/'+${item.id}">View Detail</a>

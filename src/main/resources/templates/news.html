@@ -127,19 +127,19 @@
                 </p>
                 </div>
                 <div>
-                <div class="col-md-6 text-left" th:if="${nextNews!=null}">
+                <div class="col-md-6 text-left" th:if="${prevNews!=null}">
                     <div class="row">
-                    <a th:href="'/news/'+${nextNews.id}">  <big><span>LAST</span></big></a>
+                    <a th:href="'/news/'+${prevNews.id}">  <big><span>LAST</span></big></a>
                     </div>
-                    <div class="row" th:text="${nextNews.title}">
+                    <div class="row" th:text="${prevNews.title}">
                         this is a title
                     </div>
                 </div>
-                <div class="col-md-6 text-right" th:if="${prevNews!=null}">
+                <div class="col-md-6 text-right" th:if="${nextNews!=null}">
                     <div class="row">
-                        <a th:href="'/news/'+${prevNews.id}"><big><span >NEXT</span></big>
+                        <a th:href="'/news/'+${nextNews.id}"><big><span >NEXT</span></big>
                         </a></div>
-                    <div class="row" th:text="${prevNews.title}">
+                    <div class="row" th:text="${nextNews.title}">
                         this is a title
                     </div>
                 </div>
@@ -179,7 +179,7 @@
             <div class="row">
                 <div class="text-center col-lg-3 col-md-6" th:each="item : ${rlProducts}">
                     <div class="cate-bnr-sngle bordered">
-                        <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(item.logo,',')[0]}" alt="">
+                        <img th:src="'/'+${#strings.listSplit(item.logo,',')[0]}" alt="">
                         <p th:text="${item.title}">FDY-101快穿式防弹背心</p>
                         <div class="cate-content text-center">
                             <a th:href="'/product/'+${item.id}">View Detail</a>
