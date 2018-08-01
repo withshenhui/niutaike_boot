@@ -164,7 +164,7 @@
         <div class="row mb-20">
             <div class="text-center col-lg-3 col-md-6" th:each="p : ${item.list}">
                 <div class="cate-bnr-sngle bordered">
-                    <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(p.logo,',')[0]}" alt="">
+                    <img th:src="'/'+${#strings.listSplit(p.logo,',')[0]}" alt="">
                     <p th:text="${p.title}">FDY-101快穿式防弹背心</p>
                     <div class="cate-content text-center">
                         <a th:href="'/product/'+${p.id}">View Detail</a>
