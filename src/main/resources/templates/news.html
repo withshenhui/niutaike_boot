@@ -129,7 +129,7 @@
                 <div>
                 <div class="col-md-6 text-left" th:if="${nextNews!=null}">
                     <div class="row">
-                    <a th:href="'/news/'+${nextNews.id}"> <i class="fa fa-arrow-left"></i> <span>next</span></a>
+                    <a th:href="'/news/'+${nextNews.id}">  <big><span>LAST</span></big></a>
                     </div>
                     <div class="row" th:text="${nextNews.title}">
                         this is a title
@@ -137,7 +137,7 @@
                 </div>
                 <div class="col-md-6 text-right" th:if="${prevNews!=null}">
                     <div class="row">
-                        <a th:href="'/news/'+${prevNews.id}"><span >last</span><i class="fa fa-arrow-right"></i>
+                        <a th:href="'/news/'+${prevNews.id}"><big><span >NEXT</span></big>
                         </a></div>
                     <div class="row" th:text="${prevNews.title}">
                         this is a title
@@ -152,11 +152,11 @@
                         <div class="single-sidebar-widget search">
                             <form action="/news">
                                 <input type="text" name="title" placeholder="Search">
-                                <button type="submit"><i class="fa fa-search">Latest News</i></button>
+                                <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
                         <div class="single-sidebar-widget category">
-                            <h3 class="title"></h3>
+                            <h3 class="title">Latest News</h3>
                             <ul>
                                 <li th:each="item : ${news.data}">
                                     <a th:href="'/news/'+${item.id}" th:text="${item.title}">Chemical Research</a></li>
