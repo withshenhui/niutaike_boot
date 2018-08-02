@@ -14,7 +14,7 @@ interface NewsMapper {
     fun selectCount(actionQuery: NewsQuery):Int
 
 
-    @Select("SELECT * FROM ntk_news WHERE id > #{id} ORDER BY id DESC LIMIT 1")
+    @Select("SELECT * FROM ntk_news WHERE id > #{id} ORDER BY id ASC LIMIT 1")
     fun selectNext(@Param("id") id:Long):News?
 
     @Select("SELECT * FROM ntk_news WHERE id < #{id} ORDER BY id DESC LIMIT 1")
