@@ -92,12 +92,10 @@
             <a class="list-single" target="mainIframe" th:each="type : ${types}" th:href="'/category/'+${type.id}" >
                 <span th:text="${type.label}" class="color-black">Hard Armor Plates</span></a>
         </div>
-
-         <div class="row text-center mb-20" th:each="p : ${products}">
+        <div class="row text-center mb-20" th:each="p : ${products}">
             <a class="list-single" target="mainIframe"  th:href="'product/'+${p.id}">
                 <span th:text="${p.title}" class="color-black">NIJ III PE单曲面防弹插板ICW</span></a>
         </div>
-
     </div>
 </section>
 <!-- 网站地图1 end -->
