@@ -63,7 +63,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 sec-title colored text-center">
-                <h2>Services</h2>
+                <h2>Sitemap</h2>
                 <span class="decor"><span class="inner"></span></span>
             </div>
         </div>
@@ -76,7 +76,7 @@
         <ul class="breadcumb">
             <li><a href="/">Home</a></li>
             <li><i class="fa fa-angle-right"></i></li>
-            <li><span>Services</span></li>
+            <li><span>Sitemap</span></li>
         </ul>
     </div>
 </section>
@@ -92,10 +92,12 @@
             <a class="list-single" target="mainIframe" th:each="type : ${types}" th:href="'/category/'+${type.id}" >
                 <span th:text="${type.label}" class="color-black">Hard Armor Plates</span></a>
         </div>
-        <div class="row text-center mb-50">
-            <a class="list-single" target="mainIframe" th:each="p : ${products}" th:href="'product/'+${p.id}">
+
+         <div class="row text-center mb-20" th:each="p : ${products}">
+            <a class="list-single" target="mainIframe"  th:href="'product/'+${p.id}">
                 <span th:text="${p.title}" class="color-black">NIJ III PE单曲面防弹插板ICW</span></a>
         </div>
+
     </div>
 </section>
 <!-- 网站地图1 end -->
@@ -103,13 +105,13 @@
 <section class="sec-padding2">
     <div class="container">
         <div class="sec-title text-center mb-20">
-            <h2><span class="color-black">新闻资讯</span></h2>
+            <h2><span class="color-black">News</span></h2>
             <span class="decor"><span class="inner"></span></span>
         </div>
         <div class="row text-center mb-20">
-            <a class="list-single" target="mainIframe" href="/news?type=INDUSTRY"><span class="color-black">行业动态</a>
-            <a class="list-single" target="mainIframe" href="/news?type=COMPANY"><span class="color-black">公司新闻</a>
-            <a class="list-single" target="mainIframe" href="/news?type=TECH"><span class="color-black">技术百科</a>
+            <a class="list-single" target="mainIframe" href="/news?type=INDUSTRY"><span class="color-black">Industy</a>
+            <a class="list-single" target="mainIframe" href="/news?type=COMPANY"><span class="color-black">Company</a>
+            <a class="list-single" target="mainIframe" href="/news?type=TECH"><span class="color-black">Tech</a>
         </div>
     </div>
 </section>
@@ -118,10 +120,10 @@
 <section class="sec-padding2">
     <div class="container">
         <div class="sec-title text-center  mb-20">
-            <h2><span class="color-black">关于我们</span></h2>
+            <h2><span class="color-black">About Us</span></h2>
             <span class="decor"><span class="inner"></span></span>
                <div class="row text-center mt-20 mb-20">
-            <a class="list-single" target="mainIframe" href="/about"><span class="color-black">关于我们</a>
+            <a class="list-single" target="mainIframe" href="/about"><span class="color-black">About Us</a>
         </div>
         </div>
     </div>
@@ -131,10 +133,10 @@
 <section class="sec-padding2">
     <div class="container">
         <div class="sec-title text-center mb-20">
-            <h2><span class="color-black">联系我们</span></h2>
+            <h2><span class="color-black">Contact Us</span></h2>
             <span class="decor"><span class="inner"></span></span>   <div class="row text-center mb-20">
                 <div class="row text-center mt-20 mb-20">
-            <a class="list-single" target="mainIframe" href="/contact"><span class="color-black">联系我们</a>
+            <a class="list-single" target="mainIframe" href="/contact"><span class="color-black">Contact Us</a>
 
         </div>
         </div>
@@ -147,7 +149,7 @@
         <div class="clearfix">
             <div class="call-to-action-corner col-md-6"
                  style="background-image: url(/img/call-to-action/left-box-bg.jpg);">
-                <a href="/">
+                <a href="http://www.newtecharmor.com/category/67">
                     <div class="single-call-to-action open-hours">
                         <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">
@@ -165,7 +167,7 @@
             </div>
             <div class="call-to-action-center col-md-6"
                  style="background-image: url(/img/call-to-action/center-box-bg.jpg);">
-                <a href="/">
+                <a href="http://www.newtecharmor.com/category/64">
                     <div class="single-call-to-action">
                         <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">

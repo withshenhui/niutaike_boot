@@ -284,7 +284,7 @@
     <div class="row mb-0">
         <div class="text-center col-lg-3 col-md-6" th:each="p : ${products}">
             <div class="cate-bnr-sngle bordered ">
-                <img th:src="'/'+${#strings.listSplit(p.logo,',')[0]}" alt="">
+                <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(p.logo,',')[0]}" alt="">
                 <p th:text="${p.title}">FDY-101快穿式防弹背心</p>
                 <div class="cate-content text-center">
                     <a th:href="'product/'+${p.id}">View Detail</a>
@@ -501,7 +501,7 @@
             <div class="col-md-6 col-sm-12 sm-col-center mb-sm-40">
                 <div class="single-blog-post">
                     <div class="img-box " th:each="item : ${newsLeft.data}" style="padding: 10px">
-                        <img th:src="'/'+${item.logo}" alt="" style="max-height: 167px;">
+                        <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="" style="max-height: 167px;">
                         <div class="firstNew">
                             <h4 th:text="${item.title}">新闻标题</h4>
                             <p>
@@ -514,7 +514,7 @@
             <div class="col-md-6 col-sm-12 sm-col-center mb-sm-40">
                 <div class="single-blog-post">
                     <div class="img-box " th:each="item : ${newsRight.data}" style="padding: 10px">
-                        <img th:src="'/'+${item.logo}" alt="" style="max-height: 167px;">
+                        <img th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="" style="max-height: 167px;">
                         <div class="firstNew">
                             <h4 th:text="${item.title}">新闻标题</h4>
                             <p> 

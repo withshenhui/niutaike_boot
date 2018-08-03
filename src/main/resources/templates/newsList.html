@@ -80,7 +80,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 sec-title colored text-center">
-                <h2>Blog Page</h2>
+                <h2>News</h2>
                 <span class="decor"><span class="inner"></span></span>
             </div>
         </div>
@@ -108,7 +108,7 @@
         <ul class="breadcumb">
             <li><a href="/">Home</a></li>
             <li><i class="fa fa-angle-right"></i></li>
-            <li><span>Services</span></li>
+            <li><span>News</span></li>
         </ul>
     </div>
 </section>
@@ -121,7 +121,7 @@
                 <div class="single-blog-post mb-20 pb-40" th:each="item : ${newsList.data}">
                     <div class="row">
                         <div class="col-md-4 img-box mt-30">
-                            <img class="full-width" th:src="'/'+${item.logo}" alt="">
+                            <img class="full-width" th:src="'http://api.newtecharmor.com/'+${item.logo}" alt="">
                         </div>
                         <div class="col-md-4 content-box ">
                             <div class="content ">
@@ -176,7 +176,7 @@
         <div class="row">
             <div class="text-center col-lg-3 col-md-6" th:each="item : ${rlProducts}">
                 <div class="cate-bnr-sngle bordered">
-                    <img th:src="'/'+${#strings.listSplit(item.logo,',')[0]}" alt="">
+                    <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(item.logo,',')[0]}" alt="">
                     <p th:text="${item.title}">FDY-101快穿式防弹背心</p>
                     <div class="cate-content text-center">
                         <a th:href="'/product/'+${item.id}">View Detail</a>
@@ -193,7 +193,7 @@
         <div class="clearfix">
             <div class="call-to-action-corner col-md-6"
                  style="background-image: url(/img/call-to-action/left-box-bg.jpg);">
-                <a href="/">
+                <a href="http://www.newtecharmor.com/category/67">
                     <div class="single-call-to-action open-hours">
                         <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">
@@ -211,7 +211,7 @@
             </div>
             <div class="call-to-action-center col-md-6"
                  style="background-image: url(/img/call-to-action/center-box-bg.jpg);">
-                <a href="/">
+                <a href="http://www.newtecharmor.com/category/64">
                     <div class="single-call-to-action">
                         <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">

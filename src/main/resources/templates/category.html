@@ -101,11 +101,9 @@
                     </li>
                 </ul>
                     <ul>
-                        <li class="right">
-                            <form action="/search" name="searchForm">
-                                <input type="text" name="title" value="" placeholder="Key Words" id="search">
-                                <i class="fa fa-search" id="search_icon" onclick="subSearchForm();"></i>
-                            </form>
+                <li class="right ">
+                            <input type="text" name="" value="" placeholder="Key Words" id="search">
+                            <i class="fa fa-search" id="search_icon"></i>
                         </li>
                    
                 </ul>
@@ -164,7 +162,7 @@
         <div class="row mb-20">
             <div class="text-center col-lg-3 col-md-6" th:each="p : ${item.list}">
                 <div class="cate-bnr-sngle bordered">
-                    <img th:src="'/'+${#strings.listSplit(p.logo,',')[0]}" alt="">
+                    <img th:src="'http://api.newtecharmor.com/'+${#strings.listSplit(p.logo,',')[0]}" alt="">
                     <p th:text="${p.title}">FDY-101快穿式防弹背心</p>
                     <div class="cate-content text-center">
                         <a th:href="'/product/'+${p.id}">View Detail</a>
@@ -182,7 +180,7 @@
         <div class="clearfix">
             <div class="call-to-action-corner col-md-6"
                  style="background-image: url(/img/call-to-action/left-box-bg.jpg);">
-                <a href="/">
+                <a href="http://www.newtecharmor.com/category/67">
                     <div class="single-call-to-action open-hours">
                         <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">
@@ -200,7 +198,7 @@
             </div>
             <div class="call-to-action-center col-md-6"
                  style="background-image: url(/img/call-to-action/center-box-bg.jpg);">
-                <a href="/">
+                <a href="http://www.newtecharmor.com/category/64">
                     <div class="single-call-to-action">
                         <div class="img-box  pt-60 ">
                                 <div class="col-lg-2 col-md-2">
