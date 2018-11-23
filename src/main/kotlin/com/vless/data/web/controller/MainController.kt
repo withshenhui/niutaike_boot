@@ -36,7 +36,7 @@ class MainController {
         val listType=productTypeService.findPage(productTypeQuery).data
         model.addAttribute("types",listType)
         var newsQuery=NewsQuery()
-        newsQuery.limit=100
+        newsQuery.limit=5
         newsQuery.showIndex=true
         val listNews=newsService.findPage(newsQuery)
         var productQuery=ProductQuery()
