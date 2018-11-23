@@ -136,10 +136,14 @@ class MainController {
         val page=newsService.findPage(newsQuery)
         model.addAttribute("newsList",page)
         model.addAttribute("pageNum",newsQuery.page)
-        if(page.count!!/newsQuery!!.limit>1)
-            model.addAttribute("totalPages",page.count!!/newsQuery!!.limit)
-        else
-            model.addAttribute("totalPages",1)
+        val count:Double=(page.count)!!.toDouble()
+        var totalPages:Long=Math.ceil(count/newsQuery.limit).toLong()
+        if(totalPages<1) totalPages=1
+//        if(page.count!!%newsQuery!!.limit>newsQuery.page)
+//            model.addAttribute("totalPages",(page.count!!%newsQuery!!.limit)+1)
+//        else
+        println("t========="+totalPages)
+        model.addAttribute("totalPages",totalPages)
         model.addAttribute("totalElements",page.count)
         var productQuery=ProductQuery()
         productQuery.limit=4
